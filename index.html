@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="hi" data-lang="hi" class="locked">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aarushi &amp; Ajeet | Wedding Invitation</title>
+<meta name="description" content="You are warmly invited to the wedding of Aarushi and Ajeet.">
+<meta name="theme-color" content="#e2effb">
+
+<!-- ================= WHATSAPP / SOCIAL PREVIEW =================
+     og:image and og:url MUST be full https links (relative links do not work in WhatsApp).
+     Replace YOUR-USERNAME and YOUR-REPO with your GitHub Pages address.
+     Best preview.jpeg size: 1200 x 630, under 300 KB.
+-->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aarushi &amp; Ajeet - Wedding Invitation">
+<meta property="og:description" content="You are warmly invited to celebrate our wedding. Tap to open the invitation.">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/preview.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/preview.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Sans+Devanagari:wght@300;400;500&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --white:#ffffff;
+  --mist:#e2effb;
+  --sky:#bcd8f1;
+  --navy:#12294a;
+  --royal:#234b8f;
+  --gold:#b38f4f;
+  --soft:#40597d;
+  --serif:'Cormorant Garamond','Tiro Devanagari Hindi',Georgia,serif;
+  --dev:'Tiro Devanagari Hindi','Noto Serif Devanagari',serif;
+  --sans:'Jost','Noto Sans Devanagari',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-snap-type:y proximity;-webkit-text-size-adjust:100%}
+html.locked,html.locked body{overflow:hidden;height:100%}
+body{background:var(--white);color:var(--navy);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit}
+
+/* ---------- Intro (front page: video only, no text, no symbol) ---------- */
+#intro{position:fixed;inset:0;z-index:60;background:#eaf3fc;cursor:pointer;overflow:hidden;-webkit-tap-highlight-color:transparent}
+#introVideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:filter 1s ease,transform 1.4s ease}
+#intro::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 60px 4px rgba(255,255,255,0);animation:breathe 3s ease-in-out infinite}
+#intro.playing::after{animation:none;opacity:0}
+#intro.opening #introVideo{filter:brightness(1.4) saturate(1.1) blur(3px);transform:scale(1.05)}
+@keyframes breathe{50%{box-shadow:inset 0 0 90px 12px rgba(255,255,255,.55)}}
+
+#glow{position:fixed;left:50%;top:50%;width:300vmax;height:300vmax;margin:-150vmax 0 0 -150vmax;border-radius:50%;z-index:70;pointer-events:none;opacity:0;transform:scale(.04);
+  background:radial-gradient(circle,#fff 0%,#fff 38%,rgba(196,224,250,.92) 52%,rgba(196,224,250,0) 70%)}
+#glow.in{animation:glowIn .85s cubic-bezier(.3,.6,.3,1) forwards}
+#glow.out{animation:glowOut 1.2s ease forwards}
+@keyframes glowIn{0%{opacity:0;transform:scale(.04)}55%{opacity:1}100%{opacity:1;transform:scale(1)}}
+@keyframes glowOut{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.2)}}
+
+/* ---------- Site ---------- */
+#site{display:none}
+#site.show{display:block}
+
+/* Blue pages */
+.blue{position:relative;min-height:100vh;min-height:100svh;padding:100px 24px;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(180deg,#fff 0,var(--mist) 72px,var(--mist) calc(100% - 72px),#fff 100%)}
+.inner{width:100%;max-width:520px;margin:0 auto}
+
+/* White pages (full-screen video) */
+.vpage{position:relative;height:100vh;height:100svh;background:#fff;overflow:hidden;scroll-snap-align:start}
+.vpage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#fff;pointer-events:none;display:block}
+@media (min-aspect-ratio:5/8){
+  #introVideo{object-fit:contain}
+  .vpage video{object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+}
+
+/* Type */
+.invoc{font-family:var(--dev);font-size:1.05rem;color:var(--royal);letter-spacing:.02em}
+.rule{width:64px;height:1px;background:var(--gold);margin:1.3rem auto}
+.names{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(3.4rem,17vw,5.6rem);line-height:1;color:var(--navy)}
+.names span{display:block}
+.names .amp{font-size:.4em;font-style:normal;font-weight:400;color:var(--gold);margin:.2em 0 .12em}
+html[data-lang="hi"] .names{font-family:var(--dev);font-style:normal;font-weight:400;font-size:clamp(3rem,15vw,5rem);line-height:1.25}
+.lede{color:var(--soft);font-weight:300;font-size:1.02rem;max-width:34ch;margin:1.4rem auto 0}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,8vw,2.7rem);line-height:1.15;color:var(--navy)}
+html[data-lang="hi"] .h2{font-family:var(--dev);font-weight:400;line-height:1.3}
+.sub{color:var(--soft);font-weight:300;max-width:34ch;margin:.9rem auto 0}
+
+/* Countdown */
+.cd{display:grid;grid-template-columns:repeat(4,1fr);max-width:420px;margin:2.2rem auto 0}
+.cd>div{padding:.2rem 0}
+.cd>div+div{border-left:1px solid rgba(179,143,79,.55)}
+.cd b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,11vw,3.3rem);line-height:1.1;color:var(--royal);font-variant-numeric:lining-nums tabular-nums}
+.cd small{display:block;font-size:.78rem;color:var(--soft);letter-spacing:.04em}
+.cdtitle{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--soft);margin-top:2.4rem}
+html[data-lang="hi"] .cdtitle{font-family:var(--dev);font-style:normal;font-size:1.1rem}
+.cue{width:1px;height:48px;margin:2.6rem auto 0;background:linear-gradient(var(--gold),rgba(179,143,79,0));transform-origin:top;animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);opacity:0}40%{opacity:1}100%{transform:scaleY(1);opacity:0}}
+
+/* Scratch hearts */
+.hearts{display:flex;justify-content:center;gap:10px;margin:2.2rem auto 0;max-width:430px}
+.hw{flex:1 1 0;max-width:136px;aspect-ratio:1/.94;position:relative;filter:drop-shadow(0 10px 14px rgba(35,75,143,.24))}
+.heart{position:absolute;inset:0;clip-path:url(#heartClip);-webkit-clip-path:url(#heartClip);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:7%;outline:none}
+.heart canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:pointer;transition:opacity .8s ease}
+.heart.done canvas{opacity:0;pointer-events:none}
+.hval{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,9.5vw,2.7rem);line-height:1;color:var(--royal);font-variant-numeric:lining-nums}
+.hval.long{font-size:clamp(1.05rem,4.9vw,1.4rem)}
+html[data-lang="hi"] .hval{font-family:var(--dev);font-weight:400}
+.hlab{font-size:.72rem;color:var(--soft);margin-top:.3rem}
+.hw:focus-within{filter:drop-shadow(0 0 0 transparent) drop-shadow(0 0 3px var(--royal))}
+.dateline{margin-top:1.8rem;opacity:0;transform:translateY(8px);transition:opacity 1s ease,transform 1s ease}
+.dateline.show{opacity:1;transform:none}
+.dateline .d{font-family:var(--serif);font-size:clamp(1.5rem,6.4vw,1.9rem);font-weight:500;line-height:1.25;color:var(--navy)}
+.dateline .t{color:var(--soft);margin-top:.2rem}
+
+/* Venue */
+.venue{margin-top:3.4rem}
+.vname{font-family:var(--serif);font-size:clamp(1.7rem,7vw,2.1rem);font-weight:500;line-height:1.2;margin-top:1.1rem}
+.vaddr{color:var(--soft);font-weight:300;max-width:32ch;margin:.5rem auto 0}
+.btns{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;width:100%;max-width:320px;min-height:50px;padding:0 1.4rem;border-radius:999px;font-weight:500;font-size:.95rem;letter-spacing:.02em;text-decoration:none;border:1px solid var(--royal);cursor:pointer;transition:background .25s,color .25s,transform .2s}
+.btn.fill{background:var(--royal);color:#fff}
+.btn.line{background:#fff;color:var(--royal)}
+.btn.fill:hover{background:var(--navy);border-color:var(--navy)}
+.btn.line:hover{background:var(--royal);color:#fff}
+.btn:active{transform:scale(.98)}
+.ic{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.btn:focus-visible,.fab:focus-visible,.menu button:focus-visible,#intro:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+
+/* Gallery */
+.rects{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:8px 8px 34px;margin-top:1.8rem}
+.rect{aspect-ratio:3/4;background:var(--sky);overflow:hidden;border-radius:2px;box-shadow:0 0 0 5px #fff,0 0 0 6px var(--gold)}
+.rect:nth-child(even){transform:translateY(28px)}
+.circles{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:2rem;padding:0 8px}
+.circ{width:28%;max-width:124px;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--sky);box-shadow:0 0 0 4px #fff,0 0 0 5px var(--gold)}
+.circ:nth-child(2){width:34%;max-width:150px}
+.rect img,.circ img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Blessing + wishes */
+.shloka{font-family:var(--dev);font-size:clamp(1.3rem,5.8vw,1.7rem);line-height:1.95;color:var(--navy);margin-top:1.6rem}
+.translit{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.75;color:var(--soft);margin-top:1rem}
+.meaning{color:var(--navy);font-weight:300;max-width:36ch;margin:1.2rem auto 0}
+.source{font-size:.85rem;color:var(--soft);margin-top:.8rem}
+.wish{margin-top:4rem}
+.wishtext{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,5.6vw,1.6rem);line-height:1.6;color:var(--navy);max-width:30ch;margin:1.1rem auto 0}
+html[data-lang="hi"] .wishtext{font-family:var(--dev);font-style:normal;font-size:clamp(1.1rem,4.8vw,1.35rem);line-height:1.9}
+
+/* Footer */
+footer{background:linear-gradient(180deg,#fff 0,var(--mist) 72px);padding:100px 24px calc(120px + env(safe-area-inset-bottom));text-align:center}
+.fnames{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--navy)}
+.credit{margin-top:1.4rem;font-size:.95rem;display:flex;align-items:center;justify-content:center;gap:.4rem;flex-wrap:wrap}
+.credit svg{width:15px;height:15px;flex:none}
+.contact{margin-top:.4rem;font-size:.95rem;color:var(--soft)}
+.contact a{color:var(--royal);font-weight:500;text-decoration:none}
+
+/* Floating controls */
+.fab{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom));z-index:40;height:46px;border:0;border-radius:999px;background:var(--royal);color:#fff;display:none;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(18,41,74,.3);cursor:pointer;-webkit-tap-highlight-color:transparent}
+body.opened .fab{display:flex}
+#musicBtn{right:calc(18px + env(safe-area-inset-right));width:46px}
+#musicBtn .ic{width:21px;height:21px}
+#musicBtn[aria-pressed="true"] .off,#musicBtn[aria-pressed="false"] .on{display:none}
+#langBtn{left:calc(18px + env(safe-area-inset-left));padding:0 18px;font-weight:500;font-size:.85rem;letter-spacing:.02em}
+.menu{position:fixed;left:calc(18px + env(safe-area-inset-left));bottom:calc(76px + env(safe-area-inset-bottom));z-index:41;background:#fff;border:1px solid var(--sky);border-radius:16px;box-shadow:0 10px 26px rgba(18,41,74,.22);padding:6px;min-width:150px}
+.menu button{display:block;width:100%;min-height:44px;padding:0 16px;text-align:left;background:none;border:0;border-radius:10px;color:var(--navy);font-size:.95rem;cursor:pointer}
+.menu button[aria-checked="true"]{background:var(--mist);color:var(--royal);font-weight:500}
+
+@media (prefers-reduced-motion:reduce){
+  #intro::after,.cue{animation:none}
+  .dateline,.heart canvas,#introVideo,.btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Heart shape used to clip the scratch cards -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,0.95 C0.2,0.72 0.02,0.52 0.02,0.30 C0.02,0.13 0.15,0.03 0.30,0.03 C0.40,0.03 0.47,0.09 0.50,0.17 C0.53,0.09 0.60,0.03 0.70,0.03 C0.85,0.03 0.98,0.13 0.98,0.30 C0.98,0.52 0.80,0.72 0.50,0.95 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- FRONT PAGE: full-screen video only. No text, no symbol. Tap anywhere to play. -->
+<div id="intro" role="button" tabindex="0" aria-label="Open invitation">
+  <video id="introVideo" src="intro.mp4#t=0.001" playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback></video>
+</div>
+<div id="glow"></div>
+
+<main id="site">
+
+  <!-- BLUE 1 : names + countdown -->
+  <section class="blue" id="b1">
+    <div class="inner">
+      <p class="invoc">॥ श्री गणेशाय नमः ॥</p>
+      <div class="rule"></div>
+      <h1 class="names"><span id="n1">Aarushi</span><span class="amp">&amp;</span><span id="n2">Ajeet</span></h1>
+      <p class="lede" data-i18n="invite"></p>
+      <p class="cdtitle" data-i18n="cdTitle"></p>
+      <div class="cd" aria-live="off">
+        <div><b id="cdD">00</b><small data-i18n="d"></small></div>
+        <div><b id="cdH">00</b><small data-i18n="h"></small></div>
+        <div><b id="cdM">00</b><small data-i18n="m"></small></div>
+        <div><b id="cdS">00</b><small data-i18n="s"></small></div>
+      </div>
+      <div class="cue" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- WHITE 1 -->
+  <section class="vpage"><video src="video1.mp4#t=0.001" muted playsinline webkit-playsinline preload="metadata" disablepictureinpicture disableremoteplayback></video></section>
+
+  <!-- BLUE 2 : scratch cards + venue + buttons -->
+  <section class="blue" id="b2">
+    <div class="inner">
+      <h2 class="h2" data-i18n="scratchTitle"></h2>
+      <p class="sub" data-i18n="scratchHint"></p>
+      <div class="hearts" id="hearts">
+        <div class="hw"><div class="heart" tabindex="0" role="button" aria-label="Scratch to reveal the day"><div class="hval" id="hDay">12</div><div class="hlab" data-i18n="lDay"></div><canvas></canvas></div></div>
+        <div class="hw"><div class="heart" tabindex="0" role="button" aria-label="Scratch to reveal the month"><div class="hval long" id="hMonth">December</div><div class="hlab" data-i18n="lMonth"></div><canvas></canvas></div></div>
+        <div class="hw"><div class="heart" tabindex="0" role="button" aria-label="Scratch to reveal the year"><div class="hval" id="hYear">2026</div><div class="hlab" data-i18n="lYear"></div><canvas></canvas></div></div>
+      </div>
+      <div class="dateline" id="dateLine" aria-live="polite">
+        <div class="d" id="dlDate"></div>
+        <div class="t" id="dlTime"></div>
+      </div>
+
+      <div class="venue">
+        <div class="rule"></div>
+        <h2 class="h2" data-i18n="venueTitle"></h2>
+        <p class="vname" id="vName"></p>
+        <p class="vaddr" id="vAddr"></p>
+        <div class="btns">
+          <a class="btn fill" id="mapBtn" target="_blank" rel="noopener">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 1 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            <span data-i18n="mapBtn"></span>
+          </a>
+          <a class="btn line" id="calBtn" target="_blank" rel="noopener">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+            <span data-i18n="calBtn"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHITE 2 -->
+  <section class="vpage"><video src="video2.mp4#t=0.001" muted playsinline webkit-playsinline preload="metadata" disablepictureinpicture disableremoteplayback></video></section>
+
+  <!-- BLUE 3 : 4 rectangular + 3 circular images -->
+  <section class="blue" id="b3">
+    <div class="inner">
+      <h2 class="h2" data-i18n="galleryTitle"></h2>
+      <p class="sub" data-i18n="galleryText"></p>
+      <div class="rects">
+        <figure class="rect"><img src="img1.jpeg" alt="Aarushi and Ajeet" loading="lazy" decoding="async"></figure>
+        <figure class="rect"><img src="img2.jpeg" alt="Aarushi and Ajeet" loading="lazy" decoding="async"></figure>
+        <figure class="rect"><img src="img3.jpeg" alt="Aarushi and Ajeet" loading="lazy" decoding="async"></figure>
+        <figure class="rect"><img src="img4.jpeg" alt="Aarushi and Ajeet" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="circles">
+        <figure class="circ"><img src="img5.jpeg" alt="Aarushi and Ajeet" loading="lazy" decoding="async"></figure>
+        <figure class="circ"><img src="img6.jpeg" alt="Aarushi and Ajeet" loading="lazy" decoding="async"></figure>
+        <figure class="circ"><img src="img7.jpeg" alt="Aarushi and Ajeet" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHITE 3 -->
+  <section class="vpage"><video src="video3.mp4#t=0.001" muted playsinline webkit-playsinline preload="metadata" disablepictureinpicture disableremoteplayback></video></section>
+
+  <!-- BLUE 4 : blessing + heartfelt wishes + WhatsApp share -->
+  <section class="blue" id="b4">
+    <div class="inner">
+      <h2 class="h2" data-i18n="blessTitle"></h2>
+      <p class="shloka">इहैव स्तं मा वि यौष्टं विश्वमायुर्व्यश्नुतम् ।<br>क्रीळन्तौ पुत्रैर्नप्तृभिर्मोदमानौ स्वे गृहे ॥</p>
+      <p class="translit">ihaiva stam mā vi yauṣṭaṃ viśvam āyur vyaśnutam<br>krīḍantau putrair naptṛbhir modamānau sve gṛhe</p>
+      <p class="meaning" data-i18n="blessMeaning"></p>
+      <p class="source" data-i18n="blessSource"></p>
+
+      <div class="wish">
+        <div class="rule"></div>
+        <h2 class="h2" data-i18n="wishTitle"></h2>
+        <p class="wishtext" data-i18n="wishText"></p>
+        <div class="btns">
+          <a class="btn fill" id="shareBtn" target="_blank" rel="noopener">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10.5H10l-5 4v-4H4z"/></svg>
+            <span data-i18n="shareBtn"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHITE 4 -->
+  <section class="vpage"><video src="video4.mp4#t=0.001" muted playsinline webkit-playsinline preload="metadata" disablepictureinpicture disableremoteplayback></video></section>
+
+  <footer>
+    <p class="fnames" id="fNames">Aarushi &amp; Ajeet</p>
+    <p class="credit">
+      <span>Made with</span>
+      <svg viewBox="0 0 24 24" aria-label="love"><path d="M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3.1A4.6 4.6 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#c23a52"/></svg>
+      <span>by Faiz ( Fzidrishi )</span>
+    </p>
+    <p class="contact">Contact for more details - <a href="tel:+916307497449">6307497449</a></p>
+  </footer>
+</main>
+
+<!-- Floating controls: language (bottom left), music (bottom right) -->
+<button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false"><span id="langLabel">हिन्दी</span></button>
+<div class="menu" id="langMenu" role="menu" hidden>
+  <button role="menuitemradio" data-code="hi" aria-checked="true">हिन्दी</button>
+  <button role="menuitemradio" data-code="en" aria-checked="false">English</button>
+  <button role="menuitemradio" data-code="hn" aria-checked="false">Hinglish</button>
+</div>
+<button class="fab" id="musicBtn" aria-pressed="true" aria-label="Music on or off">
+  <svg class="ic on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+  <svg class="ic off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+</button>
+
+<script>
+/* ==========================================================
+   CONFIG  -  change only this block
+   ========================================================== */
+const CONFIG = {
+  names: { en: ['Aarushi', 'Ajeet'], hi: ['आरुषि', 'अजीत'] },
+
+  date: '2026-12-12',          // YYYY-MM-DD   (CHANGE)
+  time: '19:00',               // 24-hour HH:MM (CHANGE)
+  tzOffset: '+05:30',          // India
+  tzName: 'Asia/Kolkata',
+  durationHours: 4,            // used for the Google Calendar event
+
+  venueName: 'Venue Name',                        // (CHANGE)
+  venueAddress: 'Full address, City, State, PIN', // (CHANGE)
+  mapUrl: '',                  // paste the exact Google Maps share link; if empty a search link is built from the venue
+
+  defaultLang: 'hi',           // 'hi' | 'en' | 'hn' (Hinglish)
+  introSeconds: 6,             // intro plays this long after the tap, then the site opens
+  musicVolume: 0.55
+};
+
+/* ==========================================================
+   TEXT (Hindi / English / Hinglish)
+   ========================================================== */
+const MONTHS_EN = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const T = {
+  hi: {
+    label: 'हिन्दी',
+    months: ['जनवरी','फ़रवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर'],
+    invite: 'अपने परिवारों के साथ, हम आपको हमारे विवाह समारोह में सादर आमंत्रित करते हैं।',
+    cdTitle: 'उत्सव की उलटी गिनती',
+    d: 'दिन', h: 'घंटे', m: 'मिनट', s: 'सेकंड',
+    scratchTitle: 'तारीख़ जानिए',
+    scratchHint: 'हमारे विवाह की तारीख़ देखने के लिए हर दिल को स्क्रैच कीजिए।',
+    lDay: 'दिन', lMonth: 'माह', lYear: 'वर्ष',
+    venueTitle: 'आप यहाँ पधारिए',
+    mapBtn: 'गूगल मैप्स पर देखें',
+    calBtn: 'गूगल कैलेंडर में सेव करें',
+    galleryTitle: 'हमारे पल',
+    galleryText: 'अब तक के सफ़र की कुछ झलकियाँ।',
+    blessTitle: 'आशीर्वाद',
+    blessMeaning: 'आप दोनों सदा साथ रहें, कभी अलग न हों। अपने घर में संतान और पौत्रों के साथ आनंदित रहकर पूर्ण आयु प्राप्त करें।',
+    blessSource: 'ऋग्वेद 10.85.42',
+    wishTitle: 'हार्दिक शुभकामनाएँ',
+    wishText: 'आपकी उपस्थिति और आशीर्वाद से हमारा यह दिन पूर्ण होगा। इस नई शुरुआत का उत्सव हम आपके साथ मनाना चाहते हैं।',
+    shareBtn: 'व्हाट्सऐप पर साझा करें',
+    shareMsg: '{names} के विवाह में आप सादर आमंत्रित हैं। निमंत्रण यहाँ देखें:',
+    calTitle: '{names} का विवाह',
+    calDetails: 'आप सादर आमंत्रित हैं।',
+    locale: 'hi-IN'
+  },
+  en: {
+    label: 'English',
+    months: MONTHS_EN,
+    invite: 'Together with our families, we joyfully invite you to celebrate our wedding.',
+    cdTitle: 'Counting down to the celebration',
+    d: 'Days', h: 'Hours', m: 'Minutes', s: 'Seconds',
+    scratchTitle: 'Reveal the date',
+    scratchHint: 'Scratch each heart to uncover our wedding date.',
+    lDay: 'Day', lMonth: 'Month', lYear: 'Year',
+    venueTitle: 'Join us at',
+    mapBtn: 'View on Google Maps',
+    calBtn: 'Save to Google Calendar',
+    galleryTitle: 'Our moments',
+    galleryText: 'A few frames from our journey so far.',
+    blessTitle: 'Blessings',
+    blessMeaning: 'May you remain together and never be parted. May you live a full life, rejoicing in your own home with your children and grandchildren.',
+    blessSource: 'Rigveda 10.85.42',
+    wishTitle: 'Heartfelt wishes',
+    wishText: 'Your presence and blessings will make our day complete. We look forward to celebrating this new beginning with you.',
+    shareBtn: 'Share on WhatsApp',
+    shareMsg: 'You are warmly invited to the wedding of {names}. Open the invitation:',
+    calTitle: 'Wedding of {names}',
+    calDetails: 'You are warmly invited.',
+    locale: 'en-IN'
+  },
+  hn: {
+    label: 'Hinglish',
+    months: MONTHS_EN,
+    invite: 'Apne parivaron ke saath, hum aapko apni shaadi mein pyaar se aamantrit karte hain.',
+    cdTitle: 'Jashn ki ulti ginti',
+    d: 'Din', h: 'Ghante', m: 'Minute', s: 'Second',
+    scratchTitle: 'Date reveal karein',
+    scratchHint: 'Hamari shaadi ki date dekhne ke liye har heart ko scratch karein.',
+    lDay: 'Din', lMonth: 'Mahina', lYear: 'Saal',
+    venueTitle: 'Yahan padhariye',
+    mapBtn: 'Google Maps par dekhein',
+    calBtn: 'Google Calendar mein save karein',
+    galleryTitle: 'Hamare khoobsurat pal',
+    galleryText: 'Ab tak ke safar ki kuch jhalkiyan.',
+    blessTitle: 'Aashirwad',
+    blessMeaning: 'Aap dono hamesha saath rahein, kabhi juda na hon. Apne ghar mein bachchon aur pote-potiyon ke saath khushi se poori umar jiyen.',
+    blessSource: 'Rigveda 10.85.42',
+    wishTitle: 'Dil se shubhkamnayein',
+    wishText: 'Aapki maujoodgi aur aashirwad se hamara yeh din poora hoga. Is nayi shuruaat ka jashn hum aapke saath manana chahte hain.',
+    shareBtn: 'WhatsApp par share karein',
+    shareMsg: '{names} ki shaadi mein aap pyaar se aamantrit hain. Invitation yahan dekhein:',
+    calTitle: '{names} ki shaadi',
+    calDetails: 'Aap pyaar se aamantrit hain.',
+    locale: 'en-IN'
+  }
+};
+
+/* ==========================================================
+   HELPERS
+   ========================================================== */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const C = CONFIG;
+const pad = n => String(n).padStart(2, '0');
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+const [Y, MO, D] = C.date.split('-').map(Number);
+const [HH, MI] = C.time.split(':').map(Number);
+const TARGET = new Date(`${C.date}T${C.time}:00${C.tzOffset}`);
+
+/* ==========================================================
+   LANGUAGE
+   ========================================================== */
+let lang = C.defaultLang in T ? C.defaultLang : 'hi';
+
+function namesFor(code) { return (code === 'hi' ? C.names.hi : C.names.en); }
+
+function setLang(code) {
+  lang = code;
+  const t = T[code];
+  document.documentElement.lang = code === 'hi' ? 'hi' : 'en';
+  document.documentElement.dataset.lang = code;
+
+  $$('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n] || ''; });
+
+  const nm = namesFor(code);
+  $('#n1').textContent = nm[0];
+  $('#n2').textContent = nm[1];
+  $('#fNames').textContent = nm.join(' & ');
+
+  $('#hDay').textContent = String(D);
+  $('#hMonth').textContent = t.months[MO - 1];
+  $('#hYear').textContent = String(Y);
+
+  const dateFmt = new Intl.DateTimeFormat(t.locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: C.tzName });
+  const timeFmt = new Intl.DateTimeFormat(t.locale, { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: C.tzName });
+  $('#dlDate').textContent = dateFmt.format(TARGET);
+  $('#dlTime').textContent = timeFmt.format(TARGET);
+
+  $('#vName').textContent = C.venueName;
+  $('#vAddr').textContent = C.venueAddress;
+
+  $('#langLabel').textContent = t.label;
+  $$('#langMenu button').forEach(b => b.setAttribute('aria-checked', String(b.dataset.code === code)));
+
+  buildLinks();
+}
+
+function buildLinks() {
+  const t = T[lang];
+  const nm = namesFor(lang).join(' & ');
+  const venue = `${C.venueName}, ${C.venueAddress}`;
+
+  // Google Maps
+  $('#mapBtn').href = C.mapUrl || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(venue));
+
+  // Google Calendar (local time in the configured time zone)
+  const start = `${Y}${pad(MO)}${pad(D)}T${pad(HH)}${pad(MI)}00`;
+  const e = new Date(Date.UTC(Y, MO - 1, D, HH + C.durationHours, MI));
+  const end = `${e.getUTCFullYear()}${pad(e.getUTCMonth() + 1)}${pad(e.getUTCDate())}T${pad(e.getUTCHours())}${pad(e.getUTCMinutes())}00`;
+  $('#calBtn').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent(t.calTitle.replace('{names}', nm))
+    + '&dates=' + start + '/' + end
+    + '&details=' + encodeURIComponent(t.calDetails + '\n' + location.href.split('#')[0])
+    + '&location=' + encodeURIComponent(venue)
+    + '&ctz=' + encodeURIComponent(C.tzName);
+
+  // WhatsApp share
+  const msg = t.shareMsg.replace('{names}', nm) + ' ' + location.href.split('#')[0];
+  $('#shareBtn').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+}
+
+/* language menu */
+const langBtn = $('#langBtn'), langMenu = $('#langMenu');
+langBtn.addEventListener('click', e => {
+  e.stopPropagation();
+  const open = langMenu.hidden;
+  langMenu.hidden = !open;
+  langBtn.setAttribute('aria-expanded', String(open));
+});
+langMenu.addEventListener('click', e => {
+  const b = e.target.closest('button[data-code]');
+  if (!b) return;
+  setLang(b.dataset.code);
+  langMenu.hidden = true;
+  langBtn.setAttribute('aria-expanded', 'false');
+  requestAnimationFrame(layoutScratch);
+});
+document.addEventListener('click', () => { langMenu.hidden = true; langBtn.setAttribute('aria-expanded', 'false'); });
+
+/* ==========================================================
+   MUSIC
+   ========================================================== */
+const music = new Audio('music.mp3');
+music.loop = true;
+music.preload = 'auto';
+music.volume = 0;
+let musicWanted = false, fadeTimer = null;
+const musicBtn = $('#musicBtn');
+
+function setMusicUI(on) { musicBtn.setAttribute('aria-pressed', String(on)); }
+function fade(to, ms, done) {
+  clearInterval(fadeTimer);
+  const from = music.volume, steps = 20; let i = 0;
+  fadeTimer = setInterval(() => {
+    i++;
+    music.volume = Math.max(0, Math.min(1, from + (to - from) * i / steps));
+    if (i >= steps) { clearInterval(fadeTimer); if (done) done(); }
+  }, ms / steps);
+}
+function primeMusic() {            // called inside the tap, so the browser allows audio later
+  try { const p = music.play(); if (p && p.catch) p.catch(() => {}); } catch (_) {}
+}
+function startMusic() {
+  musicWanted = true;
+  const p = music.play();
+  const ok = () => { setMusicUI(true); fade(C.musicVolume, 1800); };
+  const fail = () => { musicWanted = false; setMusicUI(false); };
+  if (p && p.then) p.then(ok).catch(fail); else ok();
+}
+musicBtn.addEventListener('click', () => {
+  if (musicWanted) {
+    musicWanted = false; setMusicUI(false);
+    fade(0, 400, () => music.pause());
+  } else {
+    musicWanted = true; setMusicUI(true);
+    music.play().then(() => fade(C.musicVolume, 600)).catch(() => { musicWanted = false; setMusicUI(false); });
+  }
+});
+
+/* ==========================================================
+   INTRO  ->  glow  ->  site
+   ========================================================== */
+const intro = $('#intro'), introVideo = $('#introVideo'), glow = $('#glow'), site = $('#site');
+let started = false, opened = false;
+
+function startIntro() {
+  if (started) return;
+  started = true;
+  intro.classList.add('playing');
+  primeMusic();
+  const p = introVideo.play();
+  if (p && p.catch) {
+    p.catch(() => {
+      introVideo.muted = true;
+      const p2 = introVideo.play();
+      if (p2 && p2.catch) p2.catch(openSite);   // video missing or blocked: still open the site
+    });
+  }
+}
+intro.addEventListener('click', startIntro);
+intro.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startIntro(); } });
+introVideo.addEventListener('timeupdate', () => { if (started && introVideo.currentTime >= C.introSeconds) openSite(); });
+introVideo.addEventListener('ended', () => { if (started) openSite(); });
+introVideo.addEventListener('error', () => { if (started) openSite(); });
+
+function openSite() {
+  if (opened) return;
+  opened = true;
+  introVideo.pause();
+  intro.classList.add('opening');
+  glow.classList.add('in');
+
+  setTimeout(() => {
+    intro.remove();
+    site.classList.add('show');
+    document.documentElement.classList.remove('locked');
+    document.body.classList.add('opened');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    layoutScratch();
+    startCountdown();
+    initVideos();
+    startMusic();
+
+    glow.classList.remove('in');
+    glow.classList.add('out');
+    setTimeout(() => glow.remove(), 1300);
+  }, 850);
+}
+
+/* ==========================================================
+   COUNTDOWN
+   ========================================================== */
+function startCountdown() {
+  const els = { d: $('#cdD'), h: $('#cdH'), m: $('#cdM'), s: $('#cdS') };
+  function tick() {
+    let diff = Math.max(0, TARGET.getTime() - Date.now());
+    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+    const h = Math.floor(diff / 3600000);  diff -= h * 3600000;
+    const m = Math.floor(diff / 60000);    diff -= m * 60000;
+    const s = Math.floor(diff / 1000);
+    els.d.textContent = pad(d); els.h.textContent = pad(h); els.m.textContent = pad(m); els.s.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+/* ==========================================================
+   SCRATCH CARDS
+   ========================================================== */
+const hearts = $$('#hearts .heart');
+let revealedCount = 0;
+const scratchState = new WeakMap();
+
+function revealHeart(h) {
+  if (h.classList.contains('done')) return;
+  h.classList.add('done');
+  h.removeAttribute('tabindex');
+  revealedCount++;
+  if (revealedCount === hearts.length) $('#dateLine').classList.add('show');
+}
+
+function drawCoat(ctx, w, h) {
+  const g = ctx.createLinearGradient(0, 0, w, h);
+  g.addColorStop(0, '#8fb5de'); g.addColorStop(.45, '#d9eafa'); g.addColorStop(1, '#86aedb');
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  ctx.globalAlpha = .35; ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 1;
+  for (let i = -h; i < w; i += 9) { ctx.beginPath(); ctx.moveTo(i, h); ctx.lineTo(i + h, 0); ctx.stroke(); }
+  ctx.globalAlpha = .9; ctx.fillStyle = '#ffffff';
+  const cx = w / 2, cy = h * .46, r = w * .12;     // four-point sparkle
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - r); ctx.quadraticCurveTo(cx, cy, cx + r, cy);
+  ctx.quadraticCurveTo(cx, cy, cx, cy + r); ctx.quadraticCurveTo(cx, cy, cx - r, cy);
+  ctx.quadraticCurveTo(cx, cy, cx, cy - r); ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+function setupScratch(heart) {
+  const canvas = $('canvas', heart);
+  const rect = canvas.getBoundingClientRect();
+  if (!rect.width) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = Math.round(rect.width * dpr);
+  canvas.height = Math.round(rect.height * dpr);
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  drawCoat(ctx, rect.width, rect.height);
+  scratchState.set(heart, { w: rect.width });
+
+  if (canvas._bound) return;
+  canvas._bound = true;
+  let drawing = false, last = null, moves = 0;
+  const brush = () => Math.max(20, canvas.getBoundingClientRect().width * .2);
+  const pos = e => { const r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+
+  function stroke(a, b) {
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = brush();
+    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+  }
+  function cleared() {
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let c = 0, t = 0;
+    for (let i = 3; i < data.length; i += 16) { t++; if (data[i] < 40) c++; }
+    return c / t;
+  }
+  function check() { if (!heart.classList.contains('done') && cleared() > .33) revealHeart(heart); }
+
+  canvas.addEventListener('pointerdown', e => {
+    drawing = true; canvas.setPointerCapture(e.pointerId);
+    last = pos(e); stroke(last, last);
+  });
+  canvas.addEventListener('pointermove', e => {
+    if (!drawing) return;
+    const p = pos(e); stroke(last, p); last = p;
+    if (++moves % 6 === 0) check();
+  });
+  ['pointerup', 'pointercancel'].forEach(ev => canvas.addEventListener(ev, () => { drawing = false; last = null; check(); }));
+}
+
+hearts.forEach(h => h.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); revealHeart(h); } }));
+
+function layoutScratch() {
+  hearts.forEach(h => {
+    if (h.classList.contains('done')) return;
+    const st = scratchState.get(h);
+    const w = $('canvas', h).getBoundingClientRect().width;
+    if (!st || Math.abs(st.w - w) > 12) setupScratch(h);
+  });
+}
+let rzT; window.addEventListener('resize', () => { clearTimeout(rzT); rzT = setTimeout(layoutScratch, 250); });
+
+/* ==========================================================
+   VIDEOS ON WHITE PAGES: play on scroll-in, pause on scroll-out, once per page load
+   ========================================================== */
+function initVideos() {
+  const vids = $$('.vpage video');
+
+  // start loading a video one screen before it is reached
+  const near = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.preload = 'auto'; near.unobserve(en.target); } });
+  }, { rootMargin: '100% 0px' });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      const v = en.target;
+      v._inView = en.isIntersecting && en.intersectionRatio >= .55;
+      if (v._done) return;
+      if (v._inView) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      else v.pause();
+    });
+  }, { threshold: [0, .55, 1] });
+
+  vids.forEach(v => {
+    v.muted = true; v.loop = false; v._done = false; v._inView = false;
+    v.addEventListener('ended', () => { v._done = true; });     // never replays until the page is refreshed
+    near.observe(v); io.observe(v);
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      vids.forEach(v => v.pause());
+      music.pause();
+    } else {
+      vids.forEach(v => { if (v._inView && !v._done) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } });
+      if (musicWanted && opened) { const p = music.play(); if (p && p.catch) p.catch(() => {}); }
+    }
+  });
+}
+
+/* ==========================================================
+   GO
+   ========================================================== */
+setLang(lang);
+</script>
+</body>
+</html>
